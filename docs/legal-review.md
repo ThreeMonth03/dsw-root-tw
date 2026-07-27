@@ -29,22 +29,30 @@ not taken effect is not presented as current law.
 
 ## Initial changes
 
-The first curated pass in `legal-mapping.yml` covers 22 high-risk upstream
-questions:
+The second curated pass in `legal-mapping.yml` covers 45 high-risk upstream
+questions, 29 inherited answer, choice, and reference texts, and two new
+per-project questions with 11 conditional screening choices:
 
 - replace GDPR legal bases, controller terminology, Article 9 categories, and
   the EU/EEA transfer boundary;
 - separate personal-data compliance from ethics-review applicability;
 - route human-subject research, reuse, consent, human biobanks, Indigenous
   Peoples research, and scientific use of animals independently;
+- route medical human trials, infectious biological materials, wildlife,
+  National Health Insurance data, artificial intelligence, national core
+  critical technologies, related trade secrets, Taiwan export controls,
+  patents, public-sector records, and foreign or funder rules only when project
+  facts trigger them;
 - distinguish legally regulated personal data from other sensitive
   information;
 - localize retention, security, processing-location, and reuse restrictions;
 - replace EU database-right assumptions with a Taiwan review of copyright,
   contracts, trade secrets, and government-funded R&D terms.
 
-The proposed text is English only. It is not implemented in the KM and must not
-be translated yet.
+The proposed English text is implemented in the generated meeting draft. A
+Traditional Chinese meeting draft is maintained in the dedicated locale
+repository so both languages can be reviewed together. Neither language is a
+released or legally approved version yet.
 
 ## Time-sensitive watch list
 
@@ -61,14 +69,14 @@ the Act and subordinate rules as about to take effect][nhi-status]. Treat it as
 a conditional pending branch for National Health Insurance data until an exact
 effective date is officially announced.
 
-The 2025 Cyber Security Management Act revision also has an effective date to
-be determined by the Executive Yuan. Its regulated scope is government
-agencies and designated specific non-government agencies; it is not a generic
-security law for every research project.
+The 2025 Cyber Security Management Act revision took effect on 1 December
+2025. Its regulated scope is public agencies and designated specific non-public
+agencies; it is not a generic security law for every research project.
 
-These items remain declared in `legal-mapping.yml` with
-`promulgated_not_in_force` status so they cannot silently become current
-requirements.
+The PDPA amendment and National Health Insurance Data Management Act remain
+declared in `legal-mapping.yml` with `promulgated_not_in_force` status so they
+cannot silently become current requirements. The Cyber Security Management Act
+is declared `in_force` but appears only as a conditional route.
 
 ## Files and automation
 
@@ -84,9 +92,23 @@ list. False positives are expected.
 - official sources and provisions;
 - proposed English title and guidance.
 
+Its `content_overrides` section binds every inherited answer, choice, or URL
+reference to the exact upstream fields before replacing them. Upstream wording
+changes therefore fail validation instead of silently applying a stale legal
+edit.
+
+Its `question_additions` section defines the per-project applicability screen
+and determination record. Question and choice UUIDs derive from stable
+jurisdiction-scoped IDs rather than a package version, so a later patch release
+does not sever DSW history or existing translations. Validation also follows
+every target's ancestor path and rejects entities hidden below deleted
+questions, answers, or chapters.
+
 Regenerate and validate against the exact source bundle:
 
 ```shell
+make draft TOOLING_REPO_DIR=../dsw-km-translation-tool
+
 dsw-km-build-legal-inventory \
   --km /path/to/dsw-root-2.7.0.km \
   --rules legal-inventory-rules.yml \
@@ -99,7 +121,8 @@ dsw-km-validate-legal-mapping \
 
 CI uses the immutable source dependency recorded in the workflows and rejects a
 changed checksum, stale UUID, changed title, unknown legal-source reference, or
-out-of-date generated inventory.
+out-of-date generated inventory. It also rebuilds `km/root-tw.km` and requires a
+byte-for-byte match, so the generated package cannot drift from the mapping.
 
 ## Review and implementation states
 
@@ -117,11 +140,11 @@ traceability and consistency, not legal correctness.
 
 ## Bilingual release rule
 
-English is the authoring language for the KM fork. After its legal wording is
-approved and released under an immutable version, the zh-Hant repository pins
-that release and translates by UUID and source text. A later legal correction
-creates a new KM patch version; it never rewrites an already translated source
-release.
+English is the authoring language for the KM fork. Before the first release,
+the English and zh-Hant meeting-draft branches may be amended together. After
+approval, the zh-Hant repository pins the immutable English source release by
+commit and bundle checksum. A later legal correction creates a new KM patch
+version; it never rewrites an already translated source release.
 
 The Traditional Chinese statutory text is authoritative if an official English
 translation differs. Translators should preserve legal identifiers and links,

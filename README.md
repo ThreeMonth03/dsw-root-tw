@@ -5,11 +5,14 @@ English Taiwan customization of the Common DSW Knowledge Model.
 
 - DSW identity: `tw:root-tw`
 - initial parent: `dsw:root:2.7.0`
-- current status: awaiting the first reviewed KM release
+- current status: mutable bilingual `0.1.0` meeting draft; not released
 
-The DSW Knowledge Model Editor is the only writer of KM events. GitHub stores
-reviewed specifications, exported bundles, manifests, checksums, tags, and
-release assets. Never hand-edit or merge-conflict-resolve `km/root-tw.km`.
+The checked-in draft is generated from the exact parent bundle and
+`legal-mapping.yml`; never hand-edit or merge-conflict-resolve
+`km/root-tw.km`. The deterministic builder applies source-bound title, guidance,
+answer, choice, and reference replacements and creates the two curated Taiwan
+legal-routing questions with stable entity UUIDs. Structural changes outside
+that declared schema remain work for the DSW Knowledge Model Editor.
 
 The repository also keeps a checksum-bound legal review:
 
@@ -20,10 +23,16 @@ The repository also keeps a checksum-bound legal review:
 - `docs/legal-review.md` explains the decision model, known pending laws, and
   review gates.
 
-English questionnaire text is approved and released here first. Traditional
-Chinese is maintained separately in `dsw-root-tw-locales-zh_Hant`, pinned to an
-immutable release from this repository. Translation is intentionally deferred
-until the legal wording is reviewed.
+English questionnaire text is authored here. Traditional Chinese is maintained
+separately in `dsw-root-tw-locales-zh_Hant`. During the meeting-draft phase the
+two pull-request branches advance together; after approval, the translation
+repository pins the immutable source release.
+
+Build the same draft locally with:
+
+```shell
+make draft TOOLING_REPO_DIR=../dsw-km-translation-tool
+```
 
 Start with [the legal-review guide](docs/legal-review.md), then follow
 [the release process](docs/release-process.md).

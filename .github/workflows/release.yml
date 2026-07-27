@@ -10,7 +10,7 @@ permissions:
 
 env:
   TOOLING_REPOSITORY: ThreeMonth03/dsw-km-translation-tool
-  TOOLING_REF: 7c9b7aedace898284c10f02582eb64b43a25c65a
+  TOOLING_REF: 3419c497d10560d2d0a11f1d35f257a51e1987b1
 
 jobs:
   release:
@@ -49,6 +49,16 @@ jobs:
             --rules km-repo/legal-inventory-rules.yml \
             --out "$inventory"
           diff --unified km-repo/legal-question-inventory.yml "$inventory"
+
+      - name: Verify generated KM
+        run: |
+          draft="$RUNNER_TEMP/root-tw.km"
+          tooling-repo/.venv/bin/python km-repo/scripts/build_draft.py \
+            --repo-root km-repo \
+            --tooling-repo tooling-repo \
+            --source-km tooling-repo/tests/fixtures/source_inputs/dsw_root_2.7.0.km \
+            --output "$draft"
+          diff --unified km-repo/km/root-tw.km "$draft"
 
       - name: Validate immutable release boundary
         env:
