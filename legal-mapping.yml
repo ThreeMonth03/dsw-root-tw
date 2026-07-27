@@ -1,4 +1,696 @@
 schema_version: 1
+jurisdiction: TW
+as_of: 2026-07-27
 status: drafting
-reviewed_through: null
-mappings: []
+
+notice: >-
+  Engineering and review specification only. It records preliminary statutory
+  mappings and does not provide legal advice or decide applicability for a
+  particular institution or research project.
+
+source:
+  package_id: dsw:root:2.7.0
+  bundle_sha256: aabca6f7de8ad41cf9989afd25d4827f3de134fb8f0d965fcc6c336cfeb3e965
+  repository: ThreeMonth03/dsw-km-translation-tool
+  ref: 7c9b7aedace898284c10f02582eb64b43a25c65a
+  bundle_path: tests/fixtures/source_inputs/dsw_root_2.7.0.km
+
+localization:
+  authoring_language: en
+  required_languages:
+    - en
+    - zh_Hant
+  zh_Hant_status: deferred_until_legal_review
+
+legal_sources:
+  - id: science-europe-rdm-guide
+    title: Practical Guide to the International Alignment of Research Data Management
+    authority: Science Europe
+    kind: international_guidance
+    status: guidance
+    official_url: https://scienceeurope.org/our-resources/practical-guide-to-the-international-alignment-of-research-data-management/
+    verified_on: 2026-07-27
+
+  - id: pdpa-current
+    title: Personal Data Protection Act
+    authority: Ministry of Justice
+    kind: law
+    status: in_force
+    official_url: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=I0050021
+    verified_on: 2026-07-27
+    status_note: >-
+      The official consolidated page includes the promulgated 2025 text even
+      where its effective date has not been set. Each amended provision must be
+      checked against the PDPC effective-status notice before use.
+
+  - id: pdpa-amendment-comparison
+    title: Official comparison of the 2025 PDPA amendment with the currently effective provisions
+    authority: Preparatory Office of the Personal Data Protection Commission
+    kind: official_guidance
+    status: guidance
+    official_url: https://ws.pdpc.gov.tw/FS01/FilePath/3/relfile/30/1015/01f372c7-19cd-4946-8930-5d18629b30df.pdf
+    verified_on: 2026-07-27
+
+  - id: pdpa-2025-amendment
+    title: 2025 amendment to the Personal Data Protection Act
+    authority: Preparatory Office of the Personal Data Protection Commission
+    kind: law
+    status: promulgated_not_in_force
+    official_url: https://www.pdpc.gov.tw/News_Content/20/1010/
+    verified_on: 2026-07-27
+
+  - id: human-subjects-research-act
+    title: Human Subjects Research Act
+    authority: Ministry of Justice
+    kind: law
+    status: in_force
+    official_url: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=L0020176
+    verified_on: 2026-07-27
+
+  - id: indigenous-research-regulation
+    title: Regulations on consultation, consent, commercial benefit agreements, and their application for research involving Indigenous Peoples
+    authority: Council of Indigenous Peoples
+    kind: regulation
+    status: in_force
+    official_url: https://law.cip.gov.tw/LawContent.aspx?id=GL000245
+    verified_on: 2026-07-27
+
+  - id: human-biobank-management-act
+    title: Human Biobank Management Act
+    authority: Ministry of Justice
+    kind: law
+    status: in_force
+    official_url: https://law.moj.gov.tw/Eng/LawClass/LawAll.aspx?PCode=L0020164
+    verified_on: 2026-07-27
+
+  - id: animal-protection-act
+    title: Animal Protection Act
+    authority: Ministry of Agriculture
+    kind: law
+    status: in_force
+    official_url: https://law.moa.gov.tw/EngLawContent.aspx?id=7&lan=E
+    verified_on: 2026-07-27
+
+  - id: copyright-act
+    title: Copyright Act
+    authority: Ministry of Justice
+    kind: law
+    status: in_force
+    official_url: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0070017
+    verified_on: 2026-07-27
+
+  - id: trade-secrets-act
+    title: Trade Secrets Act
+    authority: Ministry of Economic Affairs
+    kind: law
+    status: in_force
+    official_url: https://law.moea.gov.tw/EngLawContent.aspx?id=10372
+    verified_on: 2026-07-27
+
+  - id: fundamental-science-technology-act
+    title: Fundamental Science and Technology Act
+    authority: Ministry of Justice
+    kind: law
+    status: in_force
+    official_url: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=H0160028
+    verified_on: 2026-07-27
+
+  - id: cyber-security-2025-amendment
+    title: 2025 revision of the Cyber Security Management Act
+    authority: Ministry of Digital Affairs
+    kind: law
+    status: promulgated_not_in_force
+    official_url: https://law.moda.gov.tw/EngLawContent.aspx?id=93&lan=E&media=print
+    verified_on: 2026-07-27
+
+  - id: nhi-data-management-act
+    title: National Health Insurance Data Management Act
+    authority: Ministry of Health and Welfare
+    kind: law
+    status: promulgated_not_in_force
+    official_url: https://www.mohw.gov.tw/cp-6661-85706-1.html
+    verified_on: 2026-07-27
+
+  - id: nstc-research-ethics
+    title: The Ethical Guidelines for Researchers
+    authority: National Science and Technology Council
+    kind: funder_policy
+    status: policy
+    official_url: https://law.nstc.gov.tw/EngLawContent.aspx?KW=&id=10074&lan=E
+    verified_on: 2026-07-27
+
+mappings:
+  - source_uuid: dbb99f35-bdd9-4637-890e-23ba5bc19d6a
+    source_title: Does the project require ethical approval?
+    topic: review-routing
+    action: rewrite
+    status: proposed
+    rationale: >-
+      Processing personal data does not by itself prove that a Taiwan ethics
+      approval is required. Human-subject research, animal scientific
+      application, biobanks, Indigenous Peoples research, and institutional
+      requirements need separate routing.
+    authorities:
+      - source_id: science-europe-rdm-guide
+        provisions:
+          - Core Requirement 4c
+      - source_id: human-subjects-research-act
+        provisions:
+          - Articles 4-5
+      - source_id: animal-protection-act
+        provisions:
+          - Articles 15-16
+      - source_id: human-biobank-management-act
+        provisions:
+          - Articles 4-6
+      - source_id: indigenous-research-regulation
+    proposed:
+      title_en: Does the project require ethics, competent-authority, or other statutory review?
+      guidance_en: >-
+        Check each applicable route separately: human-subject research and
+        exemptions, scientific use of animals, establishment or use of a human
+        biobank, research involving Indigenous Peoples, and institution or
+        funder review. Do not infer an ethics-review requirement solely from
+        the presence of personal data.
+
+  - source_uuid: 49c009cb-a38c-4836-9780-8a8b3dd1cbac
+    source_title: Will you collect any data connected to a person, "personal data"?
+    topic: personal-data-scope
+    action: rewrite
+    status: proposed
+    rationale: >-
+      The Taiwan branch must use the statutory definition of personal data and
+      distinguish the specially regulated categories in Article 6.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 6
+    proposed:
+      title_en: Will the project collect, process, or use personal data that can identify a natural person?
+      guidance_en: >-
+        Apply the Taiwan Personal Data Protection Act definition, including
+        information that identifies a person directly or indirectly. Assess
+        medical records, healthcare, genetic, sexual-life, physical-examination,
+        and criminal-record data separately under Article 6.
+
+  - source_uuid: c8687abf-ac88-4bef-b1cc-7070bd039a07
+    source_title: General Data Protection Regulation (GDPR) considerations
+    topic: personal-data-framework
+    action: replace
+    status: proposed
+    rationale: >-
+      A Taiwan default questionnaire must not present GDPR roles and legal bases
+      as if they were the domestic statutory framework.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2-6
+          - Articles 8-9
+          - Articles 15-16
+          - Articles 19-21
+          - Article 27
+    proposed:
+      title_en: Taiwan personal data protection review
+      guidance_en: >-
+        Identify whether the responsible organization is a public agency or a
+        non-government agency, the specified purpose, the applicable basis for
+        collection or processing, any different-purpose use, notice duties,
+        data-subject rights, security measures, and cross-border or
+        sector-specific restrictions.
+
+  - source_uuid: c2da0410-ede1-4b0a-a750-09e6e6bd38cf
+    source_title: What is the legal basis for processing the data under the GDPR?
+    topic: personal-data-legal-basis
+    action: replace
+    status: proposed
+    rationale: >-
+      GDPR Article 6 answer choices do not map one-to-one to Taiwan law. Taiwan
+      also uses different provisions for public and non-government agencies and
+      a separate rule for Article 6 data.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+          - Articles 15-16
+          - Articles 19-20
+    proposed:
+      title_en: What provision permits the planned collection, processing, and use of the personal data in Taiwan?
+      guidance_en: >-
+        Record the applicable provision and purpose for each responsible
+        organization. Assess public agencies under Articles 15 and 16,
+        non-government agencies under Articles 19 and 20, and Article 6
+        categories separately. Consent is one possible basis, not a universal
+        prerequisite or a substitute for research-ethics consent.
+
+  - source_uuid: de72effc-807a-4081-b842-1e77ecc9c43f
+    source_title: What are the exemptions to the prohibition for processing of special categories of data (such as health and genetic data) under Art. 9 GDPR used? State cohort/dataset for each type of exemption.
+    topic: article-6-personal-data
+    action: replace
+    status: proposed
+    rationale: >-
+      Taiwan Article 6 categories and exceptions differ from GDPR Article 9 and
+      must be asked in their own statutory terms.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+    proposed:
+      title_en: Which Article 6 basis permits processing the specially regulated personal data?
+      guidance_en: >-
+        For each dataset, identify whether it contains medical records,
+        healthcare, genetic, sexual-life, physical-examination, or criminal-record
+        data and record the exact Article 6 basis relied on. Obtain institutional
+        privacy or legal review where applicability is uncertain.
+
+  - source_uuid: eccb8305-b78e-4e60-a4ee-094c70003b7a
+    source_title: Who are the data controller(s) of the personal data processed in the project?
+    topic: responsible-organizations
+    action: replace
+    status: proposed
+    rationale: >-
+      The domestic Act distinguishes public agencies from non-government
+      agencies rather than importing the GDPR controller label unchanged.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 2
+          - Articles 15-16
+          - Articles 19-20
+          - Article 27
+    proposed:
+      title_en: Which organizations are responsible for each personal-data operation in the project?
+      guidance_en: >-
+        Name each public agency or non-government agency that determines or
+        performs collection, processing, or use. Record institutional roles,
+        instructions, security obligations, and allocation of responsibility in
+        collaboration or service agreements without assuming GDPR terminology.
+
+  - source_uuid: 361c38f0-ce75-4157-94f1-804e4d7986c2
+    source_title: Describe how data subjects exercise their rights to their data
+    topic: data-subject-rights
+    action: rewrite
+    status: proposed
+    rationale: >-
+      Guidance should name the Taiwan statutory rights and connect them to
+      notice and request-handling procedures.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 3
+          - Articles 8-11
+    proposed:
+      title_en: How can data subjects exercise their rights under Taiwan law?
+      guidance_en: >-
+        Describe the contact point and procedure for requests to inquire,
+        review, copy, supplement or correct, stop collection, processing or use,
+        and delete personal data. Record any lawful exception and align the
+        process with the required notices.
+
+  - source_uuid: 15ade1cb-af43-40be-b8b1-2b801812dab1
+    source_title: Do you plan to transfer data outside the EU/EEA?
+    topic: cross-border-transfer
+    action: replace
+    status: proposed
+    rationale: >-
+      Taiwan does not use an EU/EEA boundary. General personal-data transfer and
+      the stricter human-research and biobank routes must be separated.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 21
+      - source_id: human-subjects-research-act
+        provisions:
+          - Article 19
+      - source_id: human-biobank-management-act
+        provisions:
+          - Article 15
+    proposed:
+      title_en: Will personal data, human-research materials, or biobank data be transferred across borders?
+      guidance_en: >-
+        Identify the material, sender, recipient, country, purpose, safeguards,
+        contracts, and responsible organization. Check restrictions issued under
+        Personal Data Protection Act Article 21. If human-research material or a
+        human biobank is involved, apply the additional consent, review, approval,
+        and export rules rather than relying on the general answer alone.
+
+  - source_uuid: 50864250-7dad-421a-9f6c-303114fe6e6c
+    source_title: Does the data set include personal data?
+    topic: reused-personal-data
+    action: rewrite
+    status: proposed
+    rationale: >-
+      Reused data remains in scope when a person can be identified directly or
+      indirectly; Article 6 categories require a second check.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 6
+    proposed:
+      title_en: Does the reused dataset contain personal data under Taiwan law?
+      guidance_en: >-
+        Consider whether any party can identify a natural person directly or
+        indirectly, including by combining datasets. Separately identify any
+        Article 6 categories before deciding the legal and ethics route.
+
+  - source_uuid: 28e7c4f7-7ade-42b2-a68e-63ab4f67b960
+    source_title: Does the consent cover your data reuse?
+    topic: reuse-consent
+    action: rewrite
+    status: proposed
+    rationale: >-
+      The original flow treats consent too generically. Taiwan privacy,
+      human-subject research, and biobank consent scopes are related but
+      distinct.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 5 and 20
+      - source_id: human-subjects-research-act
+        provisions:
+          - Article 19
+      - source_id: human-biobank-management-act
+        provisions:
+          - Articles 7-8
+          - Article 16
+    proposed:
+      title_en: Do the original permissions and approvals cover the planned reuse?
+      guidance_en: >-
+        Compare the new purpose, data, participants, recipients, location,
+        retention, and disclosure with the original privacy notice, any consent,
+        ethics approval, data-use agreement, and biobank terms. Determine
+        separately whether new consent, review, notice, or another statutory
+        basis is required.
+
+  - source_uuid: c15710f6-1c7f-43a0-97e7-ab70f6b5a115
+    source_title: Is a new approval or extension of any existing approval under research ethics laws needed for re-use of the data?
+    topic: reuse-ethics-review
+    action: rewrite
+    status: proposed
+    rationale: >-
+      The reuse question should route reviewers to the Taiwan definition,
+      exemption notices, and secondary-use rule.
+    authorities:
+      - source_id: human-subjects-research-act
+        provisions:
+          - Articles 4-5
+          - Article 19
+    proposed:
+      title_en: Does the planned reuse require a new or amended Taiwan ethics review?
+      guidance_en: >-
+        Check whether the reuse is human-subject research, whether an announced
+        exemption applies, whether retained materials remain linked, and whether
+        the original approval covers the new purpose and disclosures. Record the
+        responsible review body and decision.
+
+  - source_uuid: ebcbf4c6-ce25-4a0b-9e82-039a88498203
+    source_title: Is the data collection subject to ethical legislation?
+    topic: ethics-applicability
+    action: replace
+    status: proposed
+    rationale: >-
+      A single generic ethics-legislation branch can miss Taiwan's distinct
+      statutory and institutional review routes.
+    authorities:
+      - source_id: science-europe-rdm-guide
+        provisions:
+          - Core Requirement 4c
+      - source_id: human-subjects-research-act
+        provisions:
+          - Articles 4-5
+      - source_id: human-biobank-management-act
+        provisions:
+          - Articles 4-6
+      - source_id: indigenous-research-regulation
+      - source_id: nstc-research-ethics
+    proposed:
+      title_en: Which Taiwan legal, ethics, institutional, or funder review routes apply to this collection?
+      guidance_en: >-
+        Review human-subject research, human biobanks, research involving
+        Indigenous Peoples, applicable institutional review rules, and funder
+        ethics requirements separately. Record exemptions and determinations,
+        not only approvals.
+
+  - source_uuid: b464593d-fb92-4ad9-88e1-764306bb3051
+    source_title: Does the collection of data involve human subjects?
+    topic: human-subject-research
+    action: rewrite
+    status: proposed
+    rationale: >-
+      The question should use the Taiwan statutory definition, which covers
+      research using human specimens and specified categories of information,
+      not only direct interaction.
+    authorities:
+      - source_id: human-subjects-research-act
+        provisions:
+          - Articles 4-5
+    proposed:
+      title_en: Does the project meet the Taiwan definition of human-subject research?
+      guidance_en: >-
+        Include research that obtains, investigates, analyzes, or uses human
+        specimens or an individual's biological, behavioral, physiological,
+        psychological, genetic, or medical information. Record the ethics-review
+        determination or announced exemption before research begins.
+
+  - source_uuid: a2b1fa38-792a-4628-9765-93476a38cffb
+    source_title: Have informed consents been collected from the research subjects?
+    topic: human-research-consent
+    action: rewrite
+    status: proposed
+    rationale: >-
+      Taiwan requirements depend on the research route and participant group;
+      privacy notice, privacy legal basis, and research consent must not be
+      collapsed into one checkbox.
+    authorities:
+      - source_id: human-subjects-research-act
+        provisions:
+          - Articles 12-15
+      - source_id: human-biobank-management-act
+        provisions:
+          - Articles 6-8
+      - source_id: indigenous-research-regulation
+      - source_id: pdpa-current
+        provisions:
+          - Articles 8-9
+          - Articles 15 and 19
+    proposed:
+      title_en: Have all required research consents, consultations, and personal-data notices been completed?
+      guidance_en: >-
+        Record human-subject research consent or an applicable exception,
+        biobank consent where relevant, Indigenous consultation and consent where
+        applicable, and the separate Personal Data Protection Act notice and
+        statutory basis. Preserve the approved versions and dates.
+
+  - source_uuid: 3782d32b-91b5-432f-8f93-92bb22868a22
+    source_title: Is the collection covered by ethical review?
+    topic: ethics-review-record
+    action: rewrite
+    status: proposed
+    rationale: >-
+      The answer should record both approvals and exemption or
+      non-applicability determinations with their scope and version.
+    authorities:
+      - source_id: human-subjects-research-act
+        provisions:
+          - Articles 5 and 7
+      - source_id: human-biobank-management-act
+        provisions:
+          - Article 5
+    proposed:
+      title_en: What review, exemption, or non-applicability decision covers the collection?
+      guidance_en: >-
+        Record the review body or competent authority, protocol identifier,
+        decision, scope, conditions, approved consent materials, dates, and
+        amendments. Link to controlled records rather than exposing participant
+        information.
+
+  - source_uuid: cc57d7c0-49db-4546-958f-e9407eaf93ee
+    source_title: Will the samples be stored in a local repository such as a biobank?
+    topic: human-biobank
+    action: rewrite
+    status: proposed
+    rationale: >-
+      A generic local repository is not automatically a legally established
+      human biobank, and the Taiwan Act governs linked specimens and data,
+      approvals, security, use, and international transfer.
+    authorities:
+      - source_id: human-biobank-management-act
+        provisions:
+          - Articles 3-6
+          - Articles 11-18
+    proposed:
+      title_en: Will human specimens and linked data be stored in, or obtained from, a human biobank?
+      guidance_en: >-
+        Identify the permitted biobank operator, ethics and competent-authority
+        approvals, participant consent scope, coding and security controls,
+        intended uses, third-party access, and any international transmission.
+        Do not label an ordinary sample repository a statutory human biobank
+        without confirmation.
+
+  - source_uuid: 3788d53f-c79f-43d2-b67b-7479f05cddb0
+    source_title: Can all data be legally transported and processed at the computing site?
+    topic: processing-location
+    action: rewrite
+    status: proposed
+    rationale: >-
+      The site decision must cover Taiwan privacy rules, research-material
+      restrictions, contracts, and conditional sector requirements rather than
+      an unspecified legality check.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 20-21
+          - Article 27
+      - source_id: human-subjects-research-act
+        provisions:
+          - Article 19
+      - source_id: human-biobank-management-act
+        provisions:
+          - Articles 13 and 15
+    proposed:
+      title_en: Can every dataset and research material lawfully be transferred to and processed at the selected computing site?
+      guidance_en: >-
+        Check purpose and recipient restrictions, security controls, contracts,
+        cross-border transfer, ethics and consent scope, human-research overseas
+        provision, and biobank approval. Record which data must remain in a
+        controlled environment or be accessed remotely.
+
+  - source_uuid: d5990471-0618-42cd-92cb-bbbfd4f61532
+    source_title: Are personal data sufficiently protected?
+    topic: personal-data-security
+    action: rewrite
+    status: proposed
+    rationale: >-
+      Security guidance must reference the currently effective Act while
+      tracking the promulgated but not-yet-effective 2025 amendment.
+    authorities:
+      - source_id: pdpa-amendment-comparison
+        provisions:
+          - Currently effective Article 27
+      - source_id: pdpa-2025-amendment
+      - source_id: human-biobank-management-act
+        provisions:
+          - Articles 11-13
+          - Article 18
+    proposed:
+      title_en: Are the personal data protected by risk-appropriate technical and organizational measures?
+      guidance_en: >-
+        Document access control, least privilege, separation of identifiers,
+        encryption, logging, backup, incident handling, deletion, supplier
+        controls, and re-identification risk. Apply sector rules where relevant.
+        Recheck the effective date and implementing rules of the 2025 Personal
+        Data Protection Act amendment before release.
+
+  - source_uuid: cb7d17a8-30c0-489d-a43c-702b27d97611
+    source_title: How are the rights of the collected data arranged?
+    topic: intellectual-property-and-contracts
+    action: rewrite
+    status: proposed
+    rationale: >-
+      EU database-right assumptions must not be copied. Taiwan review should
+      distinguish unprotected facts, protected expression or creative
+      compilations, contracts, trade secrets, and government-funded R&D terms.
+    authorities:
+      - source_id: copyright-act
+        provisions:
+          - Article 7
+          - Article 10-1
+          - Articles 11-12
+      - source_id: trade-secrets-act
+        provisions:
+          - Articles 2-5
+      - source_id: fundamental-science-technology-act
+        provisions:
+          - Article 6
+    proposed:
+      title_en: How are ownership, copyright, confidentiality, and authorized uses of the research outputs allocated?
+      guidance_en: >-
+        Review contracts and institutional or funder terms. Distinguish facts and
+        methods from protected expression and creative compilations; identify
+        employee, commissioned, and collaborative ownership; assess trade-secret
+        conditions; and document licenses or data-use permissions. Do not assume
+        an EU sui-generis database right applies in Taiwan.
+
+  - source_uuid: d4e6a244-07fb-4573-b93f-c20a9409ac7c
+    source_title: How long will this data set be kept?
+    topic: retention-and-deletion
+    action: rewrite
+    status: proposed
+    rationale: >-
+      Retention is not only a preservation preference. Purpose expiry,
+      research-material rules, withdrawal, agreements, and approved archival
+      needs can produce different outcomes.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 11
+      - source_id: human-subjects-research-act
+        provisions:
+          - Article 19
+      - source_id: human-biobank-management-act
+        provisions:
+          - Articles 8 and 14
+      - source_id: nstc-research-ethics
+    proposed:
+      title_en: What retention and deletion rule applies to this dataset and its identifiers?
+      guidance_en: >-
+        Record the purpose, legal or contractual minimum and maximum periods,
+        ethics or biobank conditions, participant withdrawal handling, archival
+        justification, review date, deletion method, and who authorizes an
+        extension. Treat identifiers, research data, consent records, and audit
+        records separately where required.
+
+  - source_uuid: cc95b399-7d8d-4232-bccf-686f78c91bff
+    source_title: Does this dataset contain sensitive information?
+    topic: sensitive-information
+    action: rewrite
+    status: proposed
+    rationale: >-
+      Legally regulated Article 6 personal data should not be conflated with
+      other sensitive research information such as endangered-species locations
+      or trade secrets.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+      - source_id: trade-secrets-act
+        provisions:
+          - Article 2
+      - source_id: science-europe-rdm-guide
+        provisions:
+          - Core Requirements 4a-4c
+    proposed:
+      title_en: Does this dataset contain legally regulated personal data or other sensitive information?
+      guidance_en: >-
+        Classify Article 6 personal data separately from other personal data,
+        confidential information, trade secrets, security-sensitive data, or
+        sensitive ecological and cultural information. Record the reason,
+        applicable controls, access route, and disclosure limits for each class.
+
+  - source_uuid: 63b6e695-2371-412c-bed3-f13e157da0b4
+    source_title: Data use restrictions
+    topic: reuse-restrictions
+    action: rewrite
+    status: proposed
+    rationale: >-
+      Reuse restrictions should be traced to their actual source instead of
+      being recorded as an undifferentiated free-text limitation.
+    authorities:
+      - source_id: science-europe-rdm-guide
+        provisions:
+          - Core Requirements 4a-4c
+      - source_id: pdpa-current
+        provisions:
+          - Article 20
+      - source_id: human-subjects-research-act
+        provisions:
+          - Article 19
+      - source_id: human-biobank-management-act
+        provisions:
+          - Article 16
+    proposed:
+      title_en: What restrictions govern access, use, linkage, disclosure, and onward sharing?
+      guidance_en: >-
+        For each restriction, record whether it comes from law, consent, ethics
+        approval, a biobank, contract, license, confidentiality, or institutional
+        policy; its scope and duration; the decision-maker; the access procedure;
+        and whether a machine-readable data-use term can represent it.
