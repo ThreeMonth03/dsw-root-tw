@@ -7,10 +7,17 @@ knowledge_model:
   initial_parent_package_id: dsw:root:2.7.0
   bundle_path: km/root-tw.km
 
+draft:
+  version: 0.1.0
+  description: Taiwan-focused research data management knowledge model
+  license: Apache-2.0
+  legal_mapping_path: legal-mapping.yml
+  package_readme_path: docs/package-readme.md
+
 release:
   manifest_path: release-manifest.yml
   tag_prefix: v
 
 tooling:
   repository: ThreeMonth03/dsw-km-translation-tool
-  ref: 7c9b7aedace898284c10f02582eb64b43a25c65a
+  ref: 3419c497d10560d2d0a11f1d35f257a51e1987b1

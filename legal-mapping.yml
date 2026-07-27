@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 jurisdiction: TW
 as_of: 2026-07-27
 status: drafting
@@ -20,7 +20,7 @@ localization:
   required_languages:
     - en
     - zh_Hant
-  zh_Hant_status: deferred_until_legal_review
+  zh_Hant_status: meeting_draft
 
 legal_sources:
   - id: science-europe-rdm-guide
@@ -32,16 +32,24 @@ legal_sources:
     verified_on: 2026-07-27
 
   - id: pdpa-current
-    title: Personal Data Protection Act
+    title: Personal Data Protection Act (currently effective text)
     authority: Ministry of Justice
     kind: law
     status: in_force
-    official_url: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=I0050021
+    official_url: https://law.moj.gov.tw/LawClass/LawOldVer.aspx?pcode=I0050021
     verified_on: 2026-07-27
     status_note: >-
       The official consolidated page includes the promulgated 2025 text even
       where its effective date has not been set. Each amended provision must be
       checked against the PDPC effective-status notice before use.
+
+  - id: pdpa-enforcement-rules
+    title: Enforcement Rules of the Personal Data Protection Act
+    authority: Ministry of Justice
+    kind: regulation
+    status: in_force
+    official_url: https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050022
+    verified_on: 2026-07-27
 
   - id: pdpa-amendment-comparison
     title: Official comparison of the 2025 PDPA amendment with the currently effective provisions
@@ -67,12 +75,36 @@ legal_sources:
     official_url: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=L0020176
     verified_on: 2026-07-27
 
+  - id: medical-care-act
+    title: Medical Care Act
+    authority: Ministry of Justice
+    kind: law
+    status: in_force
+    official_url: https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020021
+    verified_on: 2026-07-27
+
   - id: indigenous-research-regulation
     title: Regulations on consultation, consent, commercial benefit agreements, and their application for research involving Indigenous Peoples
     authority: Council of Indigenous Peoples
     kind: regulation
     status: in_force
     official_url: https://law.cip.gov.tw/LawContent.aspx?id=GL000245
+    verified_on: 2026-07-27
+
+  - id: indigenous-peoples-basic-law
+    title: Indigenous Peoples Basic Law
+    authority: Council of Indigenous Peoples
+    kind: law
+    status: in_force
+    official_url: https://law.cip.gov.tw/LawContent.aspx?id=FL034022
+    verified_on: 2026-07-27
+
+  - id: indigenous-consultation-regulation
+    title: Regulations on consultation with and consent by Indigenous peoples and participation and benefit-sharing
+    authority: Council of Indigenous Peoples
+    kind: regulation
+    status: in_force
+    official_url: https://law.cip.gov.tw/LawContent.aspx?id=GL000225
     verified_on: 2026-07-27
 
   - id: human-biobank-management-act
@@ -89,6 +121,38 @@ legal_sources:
     kind: law
     status: in_force
     official_url: https://law.moa.gov.tw/EngLawContent.aspx?id=7&lan=E
+    verified_on: 2026-07-27
+
+  - id: iacuc-regulation
+    title: Regulations for Establishment and Management of Institutional Animal Care and Use Committees or Panels
+    authority: Ministry of Agriculture
+    kind: regulation
+    status: in_force
+    official_url: https://law.moa.gov.tw/LawContent.aspx?id=FL014184
+    verified_on: 2026-07-27
+
+  - id: experimental-animal-sources
+    title: Regulations governing sources of animals used for scientific application
+    authority: Ministry of Agriculture
+    kind: regulation
+    status: in_force
+    official_url: https://law.moa.gov.tw/LawContent.aspx?id=GL002193
+    verified_on: 2026-07-27
+
+  - id: infectious-biological-materials
+    title: Regulations Governing Management of Infectious Biological Materials
+    authority: Taiwan Centers for Disease Control
+    kind: regulation
+    status: in_force
+    official_url: https://www.cdc.gov.tw/Category/MPage/uT3-SMR_otix09ZJLzGBog
+    verified_on: 2026-07-27
+
+  - id: wildlife-conservation-act
+    title: Wildlife Conservation Act
+    authority: Ministry of Agriculture
+    kind: law
+    status: in_force
+    official_url: https://law.moa.gov.tw/LawContent.aspx?id=FL014500
     verified_on: 2026-07-27
 
   - id: copyright-act
@@ -115,20 +179,96 @@ legal_sources:
     official_url: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=H0160028
     verified_on: 2026-07-27
 
+  - id: patent-act
+    title: Patent Act
+    authority: Ministry of Justice
+    kind: law
+    status: in_force
+    official_url: https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0070007
+    verified_on: 2026-07-27
+
+  - id: national-security-act
+    title: National Security Act
+    authority: Ministry of Justice
+    kind: law
+    status: in_force
+    official_url: https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030028
+    verified_on: 2026-07-27
+
+  - id: national-core-critical-technologies
+    title: List of National Core Critical Technologies
+    authority: National Science and Technology Council
+    kind: official_guidance
+    status: guidance
+    official_url: https://law.nstc.gov.tw/LawContent.aspx?id=GL000594
+    verified_on: 2026-07-27
+
+  - id: core-technology-project-rules
+    title: Rules for government-funded projects involving national core critical technologies
+    authority: National Science and Technology Council
+    kind: regulation
+    status: in_force
+    official_url: https://law.nstc.gov.tw/LawContent.aspx?id=GL000543
+    verified_on: 2026-07-27
+
+  - id: strategic-high-tech-export-regulations
+    title: Regulations Governing the Export and Import of Strategic High-tech Commodities
+    authority: Ministry of Economic Affairs
+    kind: regulation
+    status: in_force
+    official_url: https://law.moea.gov.tw/LawContent.aspx?id=FL011375
+    verified_on: 2026-07-27
+
   - id: cyber-security-2025-amendment
     title: 2025 revision of the Cyber Security Management Act
     authority: Ministry of Digital Affairs
     kind: law
-    status: promulgated_not_in_force
-    official_url: https://law.moda.gov.tw/EngLawContent.aspx?id=93&lan=E&media=print
+    status: in_force
+    official_url: https://law.moda.gov.tw/LawContent.aspx?id=FL088622
     verified_on: 2026-07-27
+    status_note: >-
+      The revised Act took effect on 1 December 2025. Its scope is public
+      agencies and designated specific non-public agencies, not every research
+      project.
 
   - id: nhi-data-management-act
     title: National Health Insurance Data Management Act
     authority: Ministry of Health and Welfare
     kind: law
     status: promulgated_not_in_force
-    official_url: https://www.mohw.gov.tw/cp-6661-85706-1.html
+    official_url: https://dep.mohw.gov.tw/DOS/cp-2498-87143-113.html
+    verified_on: 2026-07-27
+
+  - id: ai-fundamental-act
+    title: Artificial Intelligence Basic Act
+    authority: National Science and Technology Council
+    kind: law
+    status: in_force
+    official_url: https://law.nstc.gov.tw/LawContent.aspx?id=GL000592
+    verified_on: 2026-07-27
+
+  - id: ai-risk-classification-framework
+    title: Artificial intelligence risk classification framework
+    authority: Ministry of Digital Affairs
+    kind: official_guidance
+    status: guidance
+    official_url: https://web.moda.gov.tw/press/bulletin/20086
+    verified_on: 2026-07-27
+
+  - id: archives-act
+    title: Archives Act
+    authority: Ministry of Justice
+    kind: law
+    status: in_force
+    official_url: https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030134
+    verified_on: 2026-07-27
+
+  - id: government-information-act
+    title: The Freedom of Government Information Law
+    authority: Ministry of Justice
+    kind: law
+    status: in_force
+    official_url: https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0020026
     verified_on: 2026-07-27
 
   - id: nstc-research-ethics
@@ -157,6 +297,9 @@ mappings:
       - source_id: human-subjects-research-act
         provisions:
           - Articles 4-5
+      - source_id: medical-care-act
+        provisions:
+          - Articles 78-80
       - source_id: animal-protection-act
         provisions:
           - Articles 15-16
@@ -164,14 +307,18 @@ mappings:
         provisions:
           - Articles 4-6
       - source_id: indigenous-research-regulation
+      - source_id: indigenous-peoples-basic-law
+        provisions:
+          - Article 21
     proposed:
       title_en: Does the project require ethics, competent-authority, or other statutory review?
       guidance_en: >-
         Check each applicable route separately: human-subject research and
-        exemptions, scientific use of animals, establishment or use of a human
-        biobank, research involving Indigenous Peoples, and institution or
-        funder review. Do not infer an ethics-review requirement solely from
-        the presence of personal data.
+        exemptions, a medical human trial, scientific use of animals,
+        establishment or use of a human biobank, Indigenous Peoples or
+        Indigenous land and knowledge, regulated biological materials, and
+        institution or funder review. Do not infer an ethics-review requirement
+        solely from the presence of personal data.
 
   - source_uuid: 49c009cb-a38c-4836-9780-8a8b3dd1cbac
     source_title: Will you collect any data connected to a person, "personal data"?
@@ -298,13 +445,17 @@ mappings:
         provisions:
           - Article 3
           - Articles 8-11
+          - Article 13
     proposed:
       title_en: How can data subjects exercise their rights under Taiwan law?
       guidance_en: >-
         Describe the contact point and procedure for requests to inquire,
         review, copy, supplement or correct, stop collection, processing or use,
         and delete personal data. Record any lawful exception and align the
-        process with the required notices.
+        process with the required notices. Under the currently effective
+        Article 13, a query, review, or copy request is normally decided within
+        15 days, and another rights request within 30 days; record any permitted
+        extension and notice to the requester.
 
   - source_uuid: 15ade1cb-af43-40be-b8b1-2b801812dab1
     source_title: Do you plan to transfer data outside the EU/EEA?
@@ -420,6 +571,9 @@ mappings:
       - source_id: human-subjects-research-act
         provisions:
           - Articles 4-5
+      - source_id: medical-care-act
+        provisions:
+          - Articles 78-80
       - source_id: human-biobank-management-act
         provisions:
           - Articles 4-6
@@ -429,9 +583,10 @@ mappings:
       title_en: Which Taiwan legal, ethics, institutional, or funder review routes apply to this collection?
       guidance_en: >-
         Review human-subject research, human biobanks, research involving
-        Indigenous Peoples, applicable institutional review rules, and funder
-        ethics requirements separately. Record exemptions and determinations,
-        not only approvals.
+        medical human trials, Indigenous Peoples or Indigenous land and
+        knowledge, applicable institutional review rules, and funder ethics
+        requirements separately. Record exemptions and determinations, not only
+        approvals.
 
   - source_uuid: b464593d-fb92-4ad9-88e1-764306bb3051
     source_title: Does the collection of data involve human subjects?
@@ -605,14 +760,24 @@ mappings:
       - source_id: fundamental-science-technology-act
         provisions:
           - Article 6
+      - source_id: patent-act
+        provisions:
+          - Articles 7 and 22
+      - source_id: national-security-act
+        provisions:
+          - Articles 3 and 8
+      - source_id: national-core-critical-technologies
+      - source_id: core-technology-project-rules
     proposed:
       title_en: How are ownership, copyright, confidentiality, and authorized uses of the research outputs allocated?
       guidance_en: >-
         Review contracts and institutional or funder terms. Distinguish facts and
         methods from protected expression and creative compilations; identify
         employee, commissioned, and collaborative ownership; assess trade-secret
-        conditions; and document licenses or data-use permissions. Do not assume
-        an EU sui-generis database right applies in Taiwan.
+        and patent-before-disclosure conditions; check whether a national core
+        critical technology route applies; and document licenses or data-use
+        permissions. Do not assume an EU sui-generis database right applies in
+        Taiwan.
 
   - source_uuid: d4e6a244-07fb-4573-b93f-c20a9409ac7c
     source_title: How long will this data set be kept?
@@ -634,6 +799,9 @@ mappings:
         provisions:
           - Articles 8 and 14
       - source_id: nstc-research-ethics
+      - source_id: archives-act
+        provisions:
+          - Articles 5 and 10-12
     proposed:
       title_en: What retention and deletion rule applies to this dataset and its identifiers?
       guidance_en: >-
@@ -641,7 +809,9 @@ mappings:
         ethics or biobank conditions, participant withdrawal handling, archival
         justification, review date, deletion method, and who authorizes an
         extension. Treat identifiers, research data, consent records, and audit
-        records separately where required.
+        records separately where required. A public university or other public
+        agency must also check the Archives Act before destroying or moving
+        official records abroad.
 
   - source_uuid: cc95b399-7d8d-4232-bccf-686f78c91bff
     source_title: Does this dataset contain sensitive information?
@@ -662,13 +832,20 @@ mappings:
       - source_id: science-europe-rdm-guide
         provisions:
           - Core Requirements 4a-4c
+      - source_id: wildlife-conservation-act
+      - source_id: national-security-act
+        provisions:
+          - Article 3
+      - source_id: national-core-critical-technologies
     proposed:
       title_en: Does this dataset contain legally regulated personal data or other sensitive information?
       guidance_en: >-
         Classify Article 6 personal data separately from other personal data,
         confidential information, trade secrets, security-sensitive data, or
-        sensitive ecological and cultural information. Record the reason,
-        applicable controls, access route, and disclosure limits for each class.
+        sensitive ecological and cultural information, protected-wildlife
+        locations, and national core critical technology information. Record
+        the reason, applicable controls, access route, and disclosure limits for
+        each class.
 
   - source_uuid: 63b6e695-2371-412c-bed3-f13e157da0b4
     source_title: Data use restrictions
@@ -698,3 +875,1039 @@ mappings:
         approval, a biobank, contract, license, confidentiality, or institutional
         policy; its scope and duration; the decision-maker; the access procedure;
         and whether a machine-readable data-use term can represent it.
+
+  - source_uuid: a1d76760-053c-4706-80a2-cfb6c6a061f3
+    source_title: Does this dataset contain personal data?
+    topic: retention-of-personal-data
+    action: rewrite
+    status: proposed
+    rationale: >-
+      The preservation decision must use Taiwan's identifiability test and
+      purpose-expiry rule instead of presenting GDPR retention exemptions as
+      Taiwan law.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 11
+    proposed:
+      title_en: Does this preserved dataset contain personal data under Taiwan law?
+      guidance_en: >-
+        Determine whether a natural person can be identified directly,
+        indirectly, or by combining this dataset with other information.
+        Document the original purpose, retention basis, review date, access
+        controls, and the Article 11 reason for retaining, deleting, or stopping
+        use after the purpose disappears or the retention period expires.
+
+  - source_uuid: be4651c9-9a8c-4e10-a158-61b94ca0e139
+    source_title: What legal basis are you using to collect and process the personal data?
+    topic: personal-data-legal-basis
+    action: replace
+    status: proposed
+    rationale: >-
+      GDPR Article 6 answer logic is not a statement of Taiwan law. The
+      questionnaire must direct reviewers to the applicable Taiwan provision,
+      organization type, specified purpose, and operation.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 6-9
+          - Articles 15-16
+          - Articles 19-20
+    proposed:
+      title_en: What statutory basis and specified purpose apply to each personal-data operation?
+      guidance_en: >-
+        For each collection, processing, and use, identify the responsible
+        public or non-government agency, the specified purpose, and the exact
+        applicable provision. Assess Article 6 data separately. Record any
+        consent relied on, but do not treat consent as the only possible basis
+        or as a substitute for research-ethics consent.
+
+  - source_uuid: 9e0fb0fd-0268-4cf3-8dfa-ba0b2a1e8e89
+    source_title: Under what GDPR category does the project data fall?
+    topic: personal-data-categories
+    action: replace
+    status: proposed
+    rationale: >-
+      GDPR standard and special-category terminology does not match the
+      categories specially regulated by Article 6 of Taiwan's Act.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 6
+    proposed:
+      title_en: Which Taiwan personal-data categories does the project handle?
+      guidance_en: >-
+        Inventory directly or indirectly identifying information and separately
+        flag medical records, healthcare, genetic, sexual-life,
+        physical-examination, and criminal-record data listed in Article 6.
+        Other highly sensitive information may still require stronger controls
+        even when it is not an Article 6 category.
+
+  - source_uuid: 8915bd25-db22-4ed6-bcc8-b1bbdc52989e
+    source_title: Do you need a Data Protection Impact Assessment?
+    topic: privacy-risk-assessment
+    action: replace
+    status: proposed
+    rationale: >-
+      A GDPR DPIA must not be shown as a universal Taiwan statutory
+      requirement. High-risk projects should still record any assessment
+      required by applicable law, sector rules, an institution, or a funder.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 5, 18, and 27
+      - source_id: pdpa-amendment-comparison
+    proposed:
+      title_en: Is a privacy or data-protection risk assessment required or warranted?
+      guidance_en: >-
+        Do not assume the GDPR DPIA rule applies. Check current Taiwan law,
+        sector-specific rules, ethics conditions, contracts, and institutional
+        policy. Even when no named assessment is mandatory, document the risk
+        review for large-scale, linked, highly identifiable, Article 6, or
+        otherwise high-impact processing, and recheck the effective status of
+        the 2025 Personal Data Protection Act amendment.
+
+  - source_uuid: 6cc96576-2535-46b3-8c9b-a12703ee96cc
+    source_title: Have Data Protection Impact Assessments (DPIA) been performed for the personal data?
+    topic: privacy-risk-assessment
+    action: replace
+    status: proposed
+    rationale: >-
+      The follow-up should record the assessment actually required or selected,
+      without forcing GDPR terminology.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 5, 18, and 27
+      - source_id: pdpa-amendment-comparison
+    proposed:
+      title_en: Has the required or planned privacy risk assessment been completed?
+      guidance_en: >-
+        Record its scope, owner, legal or policy trigger, datasets, findings,
+        mitigation measures, residual risk, approval, review date, and location
+        of the controlled assessment record.
+
+  - source_uuid: 8cc50031-87d5-4b0e-8c3c-c7ded35fd263
+    source_title: List DPIAs done and for which parts of the data.
+    topic: privacy-risk-assessment
+    action: replace
+    status: proposed
+    rationale: >-
+      The assessment register should be neutral about the legal instrument that
+      required each assessment.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 5, 18, and 27
+    proposed:
+      title_en: List the privacy risk assessments and the data or operations each one covers.
+      guidance_en: >-
+        Add one item for each assessment and identify its scope and controlled
+        record. Do not place participant-level information in this list.
+
+  - source_uuid: 432c867e-8f29-47e6-9078-05bdf3d3fcb0
+    source_title: DPIA
+    topic: privacy-risk-assessment
+    action: replace
+    status: proposed
+    rationale: >-
+      A neutral item label accommodates statutory, ethics, contractual, and
+      institutional assessments.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 5, 18, and 27
+    proposed:
+      title_en: Assessment
+      guidance_en: >-
+        Enter the assessment title, identifier, owner, status, and controlled
+        record location.
+
+  - source_uuid: 3d09f311-07dd-49a0-8445-5eab8f9548fc
+    source_title: Why is a DPIA deemed necessary for this project?
+    topic: privacy-risk-assessment
+    action: replace
+    status: proposed
+    rationale: >-
+      The risk-factor question is useful, but it must not imply that GDPR
+      criteria are Taiwan statutory triggers.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 5, 18, and 27
+      - source_id: pdpa-amendment-comparison
+    proposed:
+      title_en: Why is this privacy risk assessment required or warranted?
+      guidance_en: >-
+        Select all factual risk factors that apply, then separately record the
+        Taiwan law, sector rule, ethics condition, contract, or institutional
+        policy that requires the assessment. Treat the listed factors as risk
+        prompts rather than statutory conclusions.
+
+  - source_uuid: c6e30ba1-10d6-4f3c-b81a-5f2b362f74cd
+    source_title: Have data processing agreements been (or will they be) established between the data controller(s) and any data processors?
+    topic: commissioned-processing
+    action: replace
+    status: proposed
+    rationale: >-
+      Taiwan's Act uses commissioned processing and responsible-organization
+      concepts rather than GDPR controller-processor terminology.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 4, 18, and 27
+      - source_id: pdpa-enforcement-rules
+        provisions:
+          - Articles 8 and 12
+    proposed:
+      title_en: Are written terms and oversight in place for commissioned processing and service providers?
+      guidance_en: >-
+        Identify every party commissioned to collect, process, or use personal
+        data. Document instructions, purpose and scope, access and
+        confidentiality controls, subcontracting, incident duties, return or
+        deletion, audit rights, and the responsible organization's oversight.
+        Also apply sector-specific security requirements where relevant.
+
+  - source_uuid: a21efb45-5238-4e9a-a00c-28d3d88d801b
+    source_title: List processors and agreements established
+    topic: commissioned-processing
+    action: replace
+    status: proposed
+    rationale: >-
+      The register should identify commissioned parties and governing terms
+      without relying on GDPR role names.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 4, 18, and 27
+    proposed:
+      title_en: List commissioned parties, service providers, and the governing terms.
+      guidance_en: >-
+        Record the party, service, data, purpose, contract or other terms,
+        security controls, subcontractors, oversight owner, and end-of-service
+        handling.
+
+  - source_uuid: 8c27e2cc-d2a7-45da-9829-aa22566bb34b
+    source_title: Processor
+    topic: commissioned-processing
+    action: replace
+    status: proposed
+    rationale: >-
+      The item should use a role label that remains meaningful under Taiwan law.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 4
+    proposed:
+      title_en: Commissioned party or service provider
+      guidance_en: >-
+        Identify the legal entity, contact, assigned operations, processing
+        location, and any subcontractors.
+
+  - source_uuid: 61d21b4f-332b-4257-a345-bbf51b10d357
+    source_title: Explain how data subjects will be informed.
+    topic: personal-data-notice
+    action: replace
+    status: proposed
+    rationale: >-
+      Taiwan's direct- and indirect-collection notice rules and exemptions
+      should replace the GDPR right-to-information statement.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 8-9
+    proposed:
+      title_en: How and when will each data subject receive the required Taiwan privacy notice?
+      guidance_en: >-
+        For direct collection, cover the organization, purpose, data
+        categories, period, territory, recipients, methods, Article 3 rights and
+        how to exercise them, and the effect of not providing optional data. For
+        indirect collection, also record the source and timing. Cite and justify
+        any Article 8 or 9 notice exception.
+
+  - source_uuid: db902645-6aef-426a-aa2c-30e96a4b3afb
+    source_title: Describe the measures put in place to protect data
+    topic: cross-border-safeguards
+    action: replace
+    status: proposed
+    rationale: >-
+      Cross-border safeguards must be tied to Taiwan law, research approvals,
+      consent, contracts, and the actual recipient instead of GDPR compliance.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 5, 20-21, and 27
+      - source_id: human-subjects-research-act
+        provisions:
+          - Article 19
+      - source_id: human-biobank-management-act
+        provisions:
+          - Articles 13 and 15
+    proposed:
+      title_en: Describe the legal, contractual, technical, and procedural safeguards for the transfer.
+      guidance_en: >-
+        Identify the sender, recipient, country, data or material, purpose,
+        access controls, encryption, onward-transfer limits, return or deletion,
+        incident duties, audit arrangements, and responsible organization.
+        Record any Taiwan competent-authority restriction, ethics or consent
+        condition, human-research overseas-provision rule, or biobank approval.
+
+  - source_uuid: 0f1c1125-b87f-4d88-a8b0-865f2161f604
+    source_title: Controller
+    topic: responsible-organizations
+    action: replace
+    status: proposed
+    rationale: >-
+      The list label should not impose a GDPR role classification.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 4
+    proposed:
+      title_en: Responsible organization
+      guidance_en: >-
+        Add each public agency, non-government agency, or commissioned party and
+        describe its actual collection, processing, or use role.
+
+  - source_uuid: 23fb6248-31ca-40b6-bb1a-40d77706ebb0
+    source_title: Please  specify  the controller(s)
+    topic: responsible-organizations
+    action: replace
+    status: proposed
+    rationale: >-
+      Taiwan review needs the responsible organizations and commissioned
+      parties, not an assumed GDPR controller list.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 4
+    proposed:
+      title_en: Specify the responsible organizations and commissioned parties.
+      guidance_en: >-
+        Record each legal entity, whether it is a public or non-government
+        agency, its operations and purposes, and any commissioning relationship.
+
+  - source_uuid: 6cc336d2-2ae1-4ba7-92bf-00307c48dbdf
+    source_title: Controller
+    topic: responsible-organizations
+    action: replace
+    status: proposed
+    rationale: >-
+      The item label should use Taiwan statutory organization concepts.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 4
+    proposed:
+      title_en: Responsible organization
+      guidance_en: >-
+        Identify the organization and document its purposes, operations, and
+        responsibilities.
+
+  - source_uuid: 312ad81e-a274-4523-a6b2-2299e56422b7
+    source_title: Is there more than one controller of the personal data processed in the project?
+    topic: responsible-organizations
+    action: replace
+    status: proposed
+    rationale: >-
+      Multiple participating organizations should be analyzed by their actual
+      Taiwan-law roles and arrangements.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 4
+    proposed:
+      title_en: Is more than one organization responsible for personal-data operations in the project?
+      guidance_en: >-
+        Identify the operations and specified purposes of each organization and
+        any commissioning relationship. Do not infer a GDPR joint-controller
+        classification.
+
+  - source_uuid: bdb07de8-6b54-41ac-b89d-21e089f01597
+    source_title: Will the parties be joint controllers?
+    topic: shared-responsibility
+    action: replace
+    status: proposed
+    rationale: >-
+      Collaboration duties should be documented without importing the GDPR
+      joint-controller test.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2, 4, and 27
+    proposed:
+      title_en: Do the parties share decisions or responsibilities for personal-data operations?
+      guidance_en: >-
+        Describe who determines each purpose and method, who performs each
+        operation, who answers data-subject requests, and who manages security
+        and incidents. Obtain institutional legal review for the allocation.
+
+  - source_uuid: 0dda3f9c-7567-47c8-8726-23fdfbe67e33
+    source_title: Has a joint controllership agreement between the parties been established?
+    topic: shared-responsibility
+    action: replace
+    status: proposed
+    rationale: >-
+      The agreement should allocate actual responsibilities without assuming a
+      GDPR joint-controllership classification.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2, 4, and 27
+    proposed:
+      title_en: Has a written responsibility arrangement between the parties been established?
+      guidance_en: >-
+        Allocate purposes, operations, notices, rights requests, security,
+        incident handling, retention, deletion, onward sharing, oversight, and
+        points of contact. Link to the controlled agreement.
+
+  - source_uuid: 2418a1b7-6950-4a19-8e58-6c5089c71b53
+    source_title: Select exemption
+    topic: article-6-personal-data
+    action: replace
+    status: proposed
+    rationale: >-
+      The inherited answers compress GDPR Article 9 exemptions into labels that
+      do not state Taiwan Article 6 conditions.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+    proposed:
+      title_en: Which exact Article 6 exception applies?
+      guidance_en: >-
+        Select the closest route, then record the exact Article 6 subparagraph,
+        the supporting facts, and any written-consent, public-interest,
+        research, or non-identifiability condition. If no route clearly fits,
+        stop processing and obtain institutional privacy or legal review.
+
+  - source_uuid: 12baa8af-db59-43a5-8ec7-0941c58ff89a
+    source_title: Will metadata be available openly?
+    topic: open-metadata
+    action: rewrite
+    status: proposed
+    rationale: >-
+      Horizon Europe requirements must not be presented as a default Taiwan
+      legal duty, although they may still bind a particular funded project.
+    authorities:
+      - source_id: science-europe-rdm-guide
+        provisions:
+          - Core Requirements 2 and 5
+    proposed:
+      title_en: Will metadata be openly available under the applicable funder and repository terms?
+      guidance_en: >-
+        Identify the actual funder, grant, repository, and metadata-license
+        requirements. Use CC0 or another open term only when it is appropriate
+        and permitted; do not expose personal, confidential, security-sensitive,
+        protected ecological or cultural, or national core technology
+        information. Record the reason for any restriction.
+
+  - source_uuid: a20ddc5d-e883-4bc4-9948-36a2cb477d10
+    source_title: Did you consider the possible impact to the project or organization if information leaks?
+    topic: security-incident-response
+    action: rewrite
+    status: proposed
+    rationale: >-
+      The generic impact prompt should produce an actionable incident plan and
+      distinguish currently effective duties from pending PDPA amendments.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 12
+      - source_id: pdpa-enforcement-rules
+        provisions:
+          - Articles 12 and 22
+      - source_id: pdpa-2025-amendment
+      - source_id: cyber-security-2025-amendment
+    proposed:
+      title_en: Is there a documented security-incident assessment, response, and notification plan?
+      guidance_en: >-
+        Identify the incident owner, containment and evidence steps, affected
+        data and systems, commissioned-party escalation, decision records, and
+        notification route. Apply the currently effective PDPA Article 12 and
+        Enforcement Rules; track the promulgated 2025 PDPA reporting duties
+        separately until effective. Apply the Cyber Security Management Act
+        only if the organization is a public agency or designated specific
+        non-public agency.
+
+  - source_uuid: 0e810343-6026-4992-8ea0-5539cbc77093
+    source_title: Will you be collecting physical samples?
+    topic: regulated-research-materials
+    action: rewrite
+    status: proposed
+    rationale: >-
+      Physical samples can trigger distinct human, animal, infectious-material,
+      wildlife, Indigenous, import/export, and repository requirements that a
+      generic storage question does not identify.
+    authorities:
+      - source_id: human-subjects-research-act
+        provisions:
+          - Articles 4-5 and 19
+      - source_id: medical-care-act
+        provisions:
+          - Articles 78-80
+      - source_id: human-biobank-management-act
+        provisions:
+          - Articles 3-6 and 11-18
+      - source_id: animal-protection-act
+        provisions:
+          - Articles 15-16
+      - source_id: iacuc-regulation
+      - source_id: experimental-animal-sources
+      - source_id: infectious-biological-materials
+      - source_id: wildlife-conservation-act
+      - source_id: strategic-high-tech-export-regulations
+      - source_id: indigenous-peoples-basic-law
+        provisions:
+          - Article 21
+    proposed:
+      title_en: Will the project collect, receive, store, transfer, or export physical research materials?
+      guidance_en: >-
+        Classify human specimens, medical human-trial material, human-biobank
+        material, animals or animal-derived material, infectious biological
+        material, protected wildlife, geological or cultural material, and
+        other specimens separately. Record source, consent or permit, review
+        body, transport and import/export controls, storage, linkage to data,
+        access, retention, disposal, and Indigenous consultation where
+        applicable.
+
+content_overrides:
+  - source_uuid: 5a119b74-fdb6-464c-9267-8a68b8a2cf8d
+    source_type: reference
+    topic: personal-data-legal-basis
+    status: proposed
+    rationale: Replace inherited GDPR guidance with the official Taiwan statute.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 6, 15-16, and 19-20
+    source_fields:
+      label: Legal bases for personal data processing under GDPR
+      url: https://advisera.com/eugdpracademy/knowledgebase/is-consent-needed-six-legal-bases-to-process-data-according-to-gdpr/
+    proposed_fields:
+      label: Currently effective Taiwan Personal Data Protection Act
+      url: https://law.moj.gov.tw/LawClass/LawOldVer.aspx?pcode=I0050021
+
+  - source_uuid: ca0df149-cb95-404a-a925-0a1fc5052d1d
+    source_type: answer
+    topic: anonymization
+    status: proposed
+    rationale: Use Taiwan's direct-or-indirect identifiability test.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2, 5, and 27
+    source_fields:
+      advice: Note that it is very hard to make data anonymous, and GDPR requires that you regularly verify that it is still anonymous.
+    proposed_fields:
+      advice: >-
+        Anonymization is difficult to establish in practice. Reassess whether a
+        person can be identified directly, indirectly, or by combining the data
+        with other information, and maintain risk-appropriate controls while
+        re-identification remains reasonably possible.
+
+  - source_uuid: 44348fa8-fd12-49ea-ad7f-48ff88215829
+    source_type: answer
+    topic: anonymization
+    status: proposed
+    rationale: Use Taiwan's direct-or-indirect identifiability test.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2, 5, and 27
+    source_fields:
+      advice: |-
+        Please note that GDPR law in Europe specifies that data is only anonymous as long as nobody in the world has enough information to re-identify the subject.
+
+        Furthermore, GDPR requires that you regularly verify that it is still anonymous.
+    proposed_fields:
+      advice: >-
+        Record the anonymization method, separation of identifiers, available
+        auxiliary information, and residual re-identification risk. Reassess
+        identifiability when data, recipients, linkage sources, or technology
+        change.
+
+  - source_uuid: 73cd2dda-41ba-456b-9a4e-aa34c78f2fcf
+    source_type: answer
+    topic: consent
+    status: proposed
+    rationale: Replace GDPR consent advice with Taiwan privacy and research-consent distinctions.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 6-9, 15-16, and 19-20
+      - source_id: human-subjects-research-act
+        provisions:
+          - Articles 12-15
+    source_fields:
+      advice: "Traditionally, *consent* has been the basis for processing personal data for research, but under the GDPR there cannot be an imbalance between the processor and the data subject for it to be considered to be freely given. In some countries the use of *consent* as the legal basis for processing by universities for research purposes is therefore not recommended. In those cases, public interest should probably be your legal basis. Note that if your legal basis for processing is consent, [a number of requirements](https://gdpr-info.eu/issues/consent/) exists for the consent to be considered valid under the GDPR. Consents given before the GDPR might not live up to this. \n\nNote that consent needs to be completely voluntary. If the subject gets any service or good in return for their permission, this is not considered consent. Also note that in European (GDPR) law, a data subject should be able to retract their consent at any moment."
+    proposed_fields:
+      advice: >-
+        Record the exact Taiwan provision for each collection, processing, and
+        use; consent is one possible basis, not a universal default. Assess
+        Article 6 written consent separately, preserve proof of the required
+        notice, and do not treat a privacy-law basis as a substitute for
+        human-subject research consent or ethics approval.
+
+  - source_uuid: ba4eb06a-2d61-4755-bb51-8232b349d0a1
+    source_type: reference
+    topic: privacy-risk-assessment
+    status: proposed
+    rationale: Point the Taiwan risk-assessment branch to the official amendment status.
+    authorities:
+      - source_id: pdpa-2025-amendment
+    source_fields:
+      label: RDMkit on GDPR Compliance
+      url: https://rdmkit.elixir-europe.org/gdpr_compliance
+    proposed_fields:
+      label: Official status of the 2025 Taiwan PDPA amendment
+      url: https://www.pdpc.gov.tw/News_Content/20/1010/
+
+  - source_uuid: 42a7b822-5644-48f5-aa9a-9a9e3119a028
+    source_type: reference
+    topic: personal-data-framework
+    status: proposed
+    rationale: Point the Taiwan privacy branch to the official amendment status.
+    authorities:
+      - source_id: pdpa-2025-amendment
+    source_fields:
+      label: RDMkit on GDPR Compliance
+      url: https://rdmkit.elixir-europe.org/gdpr_compliance.html
+    proposed_fields:
+      label: Official status of the 2025 Taiwan PDPA amendment
+      url: https://www.pdpc.gov.tw/News_Content/20/1010/
+
+  - source_uuid: 57a9a008-d0b0-4716-bf26-13e6eb80dc36
+    source_type: answer
+    topic: responsible-organizations
+    status: proposed
+    rationale: Remove an inherited GDPR role label.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 4
+    source_fields:
+      label: No, there is only one controller
+    proposed_fields:
+      label: No, only one organization is responsible
+
+  - source_uuid: eb17ff9a-c57e-4fd4-b3bd-89edb31c6568
+    source_type: answer
+    topic: reuse-consent
+    status: proposed
+    rationale: Replace GDPR reuse-consent advice with Taiwan statutory routing.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 6, 15-16, and 19-20
+      - source_id: human-subjects-research-act
+        provisions:
+          - Article 19
+    source_fields:
+      advice: "Traditionally, *consent* has been the basis for processing personal data for research, but under the GDPR there cannot be an imbalance between the processor and the data subject for it to be considered to be freely given. In some countries the use of *consent* as the legal basis for processing by universities for research purposes is therefore not recommended. In those cases, public interest should probably be your legal basis. Note that if your legal basis for processing is consent, [a number of requirements](https://gdpr-info.eu/issues/consent/) exists for the consent to be considered valid under the GDPR. Consents given before the GDPR might not live up to this. "
+    proposed_fields:
+      advice: >-
+        Verify the exact Taiwan provision and specified purpose for the planned
+        reuse, including any different-purpose use. Separately verify the scope
+        of research consent, ethics approval, data-use agreement, and any
+        de-identification condition; one does not automatically satisfy the
+        others.
+
+  - source_uuid: 42a0b857-00e1-4389-bd26-cb5b924ab462
+    source_type: answer
+    topic: responsible-organizations
+    status: proposed
+    rationale: Remove an inherited GDPR role label.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 4
+    source_fields:
+      label: Please  specify the controller(s)
+    proposed_fields:
+      label: Specify the responsible organization(s)
+
+  - source_uuid: caac09f2-be5c-4ba4-82dc-7f0ee33ab67d
+    source_type: choice
+    topic: reuse-restrictions
+    status: proposed
+    rationale: Replace the default EU-law restriction category with Taiwan law.
+    authorities:
+      - source_id: pdpa-current
+    source_fields:
+      label: GDPR
+    proposed_fields:
+      label: Taiwan Personal Data Protection Act or related Taiwan law
+
+  - source_uuid: f093edb7-f08c-4742-8b0e-8abe0bf6c34f
+    source_type: reference
+    topic: data-subject-rights
+    status: proposed
+    rationale: Replace the GDPR rights reference with Taiwan PDPA Article 3.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 3
+    source_fields:
+      label: "GDPR Chapter 3: Rights of the data subject"
+      url: https://gdpr-info.eu/chapter-3/
+    proposed_fields:
+      label: "Taiwan PDPA Article 3: Rights of the data subject"
+      url: https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=I0050021&flno=3
+
+  - source_uuid: c732f0b9-2f66-47f4-902f-724a44cdfd4b
+    source_type: answer
+    topic: personal-data-legal-basis
+    status: proposed
+    rationale: Prevent a generic public-interest answer from being treated as a Taiwan legal conclusion.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 15-16 and 19-20
+    source_fields:
+      label: Public interest
+      advice: Note that scientific research is not considered public interest in many jurisdictions.
+    proposed_fields:
+      label: A public-interest or research basis under the applicable Taiwan provision
+      advice: >-
+        Cite the exact Taiwan provision and facts that support this basis. A
+        research purpose alone does not establish that every public-interest or
+        academic-research condition is satisfied.
+
+  - source_uuid: f10de3a8-2751-42c7-afaa-92eed4833f8e
+    source_type: answer
+    topic: personal-data-legal-basis
+    status: proposed
+    rationale: Express the option as a Taiwan-law routing prompt.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 6, 15, and 19
+    source_fields:
+      label: Legal requirement
+    proposed_fields:
+      label: A legal requirement or statutory duty (specify the provision)
+
+  - source_uuid: 1dfe0a6d-4281-4d5e-bcaa-5e20fa28a591
+    source_type: answer
+    topic: personal-data-legal-basis
+    status: proposed
+    rationale: Express the option as a Taiwan-law routing prompt.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 19
+    source_fields:
+      label: Fulfil contract
+    proposed_fields:
+      label: A contract or similar contractual relationship under an applicable provision
+
+  - source_uuid: 9d5e3104-2b6b-4d95-848e-253ef069d8b3
+    source_type: answer
+    topic: personal-data-legal-basis
+    status: proposed
+    rationale: Remove the GDPR legitimate-interests category.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 15-16 and 19-20
+    source_fields:
+      label: Legitimate interest
+    proposed_fields:
+      label: Another applicable Taiwan statutory basis
+
+  - source_uuid: 557a5401-a94a-4a37-af2e-a21829557bfa
+    source_type: answer
+    topic: personal-data-legal-basis
+    status: proposed
+    rationale: Express the option as a Taiwan-law routing prompt.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 16 and 20
+    source_fields:
+      label: Vital interest
+    proposed_fields:
+      label: Protection from danger or serious harm under an applicable provision
+
+  - source_uuid: bccae922-5281-48f8-aa9b-f1497acc9106
+    source_type: choice
+    topic: personal-data-categories
+    status: proposed
+    rationale: Use categories expressly listed in Taiwan PDPA Article 6.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+    source_fields:
+      label: Data concerning health
+    proposed_fields:
+      label: "Article 6 data: medical records, healthcare, or physical-examination data"
+
+  - source_uuid: 039eceea-640e-4e6c-89fb-40965956a2e7
+    source_type: choice
+    topic: personal-data-categories
+    status: proposed
+    rationale: Use a category expressly listed in Taiwan PDPA Article 6.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+    source_fields:
+      label: Genetic data
+    proposed_fields:
+      label: "Article 6 data: genetic data"
+
+  - source_uuid: be1a9124-d071-46e9-8048-f8a9857fb466
+    source_type: choice
+    topic: personal-data-categories
+    status: proposed
+    rationale: Avoid incorrectly labeling a GDPR category as Taiwan Article 6 data.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 6
+    source_fields:
+      label: Racial or ethnic origin
+    proposed_fields:
+      label: Other sensitive personal data - racial or ethnic origin
+
+  - source_uuid: 2d654094-e4d1-48be-b2ce-6af94e8bfc1d
+    source_type: choice
+    topic: personal-data-categories
+    status: proposed
+    rationale: Use Taiwan PDPA Article 6 wording.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+    source_fields:
+      label: Sexual orientation
+    proposed_fields:
+      label: "Article 6 data: sexual-life data"
+
+  - source_uuid: 4e4a40fa-cf4d-4de2-8959-fc2d651be3f5
+    source_type: choice
+    topic: personal-data-categories
+    status: proposed
+    rationale: Use a category expressly listed in Taiwan PDPA Article 6.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+    source_fields:
+      label: Criminal convictions and offences
+    proposed_fields:
+      label: "Article 6 data: criminal-record data"
+
+  - source_uuid: 5e214079-f16b-4832-ac04-f4c038c48157
+    source_type: choice
+    topic: personal-data-categories
+    status: proposed
+    rationale: Avoid incorrectly labeling a GDPR category as Taiwan Article 6 data.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 6
+    source_fields:
+      label: Political opinions, religious or ideological convictions or trade union membership
+    proposed_fields:
+      label: Other sensitive personal data - political opinions, beliefs, or trade-union membership
+
+  - source_uuid: 7c215b23-edb9-4fc7-95d1-010ee53f3853
+    source_type: answer
+    topic: article-6-personal-data
+    status: proposed
+    rationale: >-
+      A research purpose is not by itself an Article 6 exception; the
+      applicable subparagraph and non-identifiability conditions must be shown.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+    source_fields:
+      label: Scientific research
+    proposed_fields:
+      label: Article 6 research route with the exact statutory conditions documented
+
+  - source_uuid: 59bc5ee8-71c9-497f-a09a-7b0736c40d74
+    source_type: answer
+    topic: article-6-personal-data
+    status: proposed
+    rationale: Use the written-consent route stated in Taiwan PDPA Article 6.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+    source_fields:
+      label: Consent
+    proposed_fields:
+      label: The data subject's written consent under Article 6
+
+  - source_uuid: 24e9cc13-b462-45fd-b242-d7122176fc9a
+    source_type: answer
+    topic: article-6-personal-data
+    status: proposed
+    rationale: Prevent an unexplained catch-all answer from becoming a legal conclusion.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+    source_fields:
+      label: Other
+    proposed_fields:
+      label: Another Article 6 exception - state the exact subparagraph and facts
+
+  - source_uuid: 8fe4a165-09a6-4e5d-835d-3255db21d0de
+    source_type: reference
+    topic: privacy-risk-assessment
+    status: proposed
+    rationale: Replace European Commission DPIA guidance with the currently effective Taiwan statute.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 5, 18, and 27
+    source_fields:
+      label: EC Guidelines on DPIAs
+      url: https://ec.europa.eu/newsroom/article29/items/611236/en
+    proposed_fields:
+      label: Currently effective Taiwan Personal Data Protection Act
+      url: https://law.moj.gov.tw/LawClass/LawOldVer.aspx?pcode=I0050021
+
+  - source_uuid: 0dfcc19c-aa2f-4054-a44d-3a95e2d7c628
+    source_type: reference
+    topic: privacy-risk-assessment
+    status: proposed
+    rationale: Replace the inherited GDPR resource with the official Taiwan amendment status.
+    authorities:
+      - source_id: pdpa-2025-amendment
+    source_fields:
+      label: FAIRCookbook on Data Protection Impact Assessment
+      url: https://w3id.org/faircookbook/FCB074
+    proposed_fields:
+      label: Official status of the 2025 Taiwan PDPA amendment
+      url: https://www.pdpc.gov.tw/News_Content/20/1010/
+
+  - source_uuid: 9d5a52da-221f-4cfb-9727-8564a3a0d15b
+    source_type: answer
+    topic: personal-data-categories
+    status: proposed
+    rationale: Replace the GDPR standard-data branch label.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Articles 2 and 6
+    source_fields:
+      label: Standard personal data
+    proposed_fields:
+      label: Personal data not listed in Article 6
+
+  - source_uuid: 4c42e36b-f70a-4c2d-b13a-66294bc22459
+    source_type: answer
+    topic: personal-data-categories
+    status: proposed
+    rationale: Replace the GDPR special-category branch label.
+    authorities:
+      - source_id: pdpa-current
+        provisions:
+          - Article 6
+    source_fields:
+      label: Special category data (plus optional additional standard personal data)
+    proposed_fields:
+      label: Article 6 data (and possibly other personal data)
+
+question_additions:
+  - addition_id: tw-conditional-legal-routes
+    parent_uuid: c3dabaaf-c946-4a0d-889c-ede966f97667
+    topic: conditional-legal-routing
+    status: proposed
+    rationale: >-
+      The inherited Science Europe structure lacks a single per-project
+      screening point for Taiwan sector laws and foreign or funder obligations.
+    authorities:
+      - source_id: science-europe-rdm-guide
+        provisions:
+          - Core Requirements 4a-4c
+      - source_id: human-subjects-research-act
+      - source_id: medical-care-act
+      - source_id: indigenous-peoples-basic-law
+        provisions:
+          - Article 21
+      - source_id: indigenous-consultation-regulation
+      - source_id: indigenous-research-regulation
+      - source_id: animal-protection-act
+      - source_id: iacuc-regulation
+      - source_id: experimental-animal-sources
+      - source_id: infectious-biological-materials
+      - source_id: nhi-data-management-act
+      - source_id: ai-fundamental-act
+      - source_id: ai-risk-classification-framework
+      - source_id: national-core-critical-technologies
+      - source_id: national-security-act
+        provisions:
+          - Articles 3 and 8
+      - source_id: core-technology-project-rules
+      - source_id: strategic-high-tech-export-regulations
+      - source_id: patent-act
+      - source_id: archives-act
+      - source_id: government-information-act
+    question_type: MultiChoiceQuestion
+    required_phase_uuid: b101f2d0-2476-452d-aa8d-95a41a02b52c
+    tag_uuids: []
+    proposed:
+      title_en: Which additional Taiwan, foreign, or funder legal routes may apply to this research project?
+      guidance_en: >-
+        Select every possible route and obtain the responsible office's
+        applicability decision. A selection is a screening flag, not a legal
+        conclusion. Record the exact law, provision, approval, exemption,
+        permit, contract, grant term, or non-applicability decision in the next
+        question.
+      choices:
+        - choice_id: medical-human-trial
+          label_en: Medical human trial or clinical research regulated by the Medical Care Act
+        - choice_id: indigenous-peoples
+          label_en: Indigenous Peoples, Indigenous land, resources, knowledge, or community participation
+        - choice_id: scientific-use-of-animals
+          label_en: Scientific use of animals or regulated animal-derived material
+        - choice_id: infectious-or-regulated-material
+          label_en: Infectious, imported, exported, wildlife, or otherwise regulated biological material
+        - choice_id: national-health-insurance-data
+          label_en: National Health Insurance data
+        - choice_id: artificial-intelligence
+          label_en: Artificial-intelligence research, training data, or a potentially high-risk AI use
+        - choice_id: national-core-technology
+          label_en: National core critical technology, related trade secret, or a government-funded core-technology project
+        - choice_id: foreign-or-funder-rules
+          label_en: Taiwan export control, foreign law, cross-border collaboration, contract, ethics, repository, or funder rules
+        - choice_id: patent-before-disclosure
+          label_en: Patent ownership or novelty review before publication or data disclosure
+        - choice_id: public-records-and-information
+          label_en: Public-agency archives, record disposal, overseas storage, or government-information disclosure
+        - choice_id: none-or-undetermined
+          label_en: None identified yet, or applicability is still undetermined
+
+  - addition_id: tw-legal-determination-record
+    parent_uuid: c3dabaaf-c946-4a0d-889c-ede966f97667
+    topic: legal-determination-record
+    status: proposed
+    rationale: >-
+      Screening flags are not auditable unless the project records who made
+      each applicability decision and which controlled record supports it.
+    authorities:
+      - source_id: science-europe-rdm-guide
+        provisions:
+          - Core Requirements 4a-4c
+      - source_id: nstc-research-ethics
+    question_type: ValueQuestion
+    required_phase_uuid: b101f2d0-2476-452d-aa8d-95a41a02b52c
+    tag_uuids: []
+    proposed:
+      title_en: Record the project's legal and review determinations.
+      guidance_en: >-
+        For every selected or uncertain route, record the authority and exact
+        provision or policy, why it applies or does not apply, required approval,
+        exemption, permit, notice, agreement, or restriction, responsible
+        institutional owner, decision-maker, date, review date, and controlled
+        record location. Do not put participant-level or confidential facts in
+        this summary.
+      value_type: TextQuestionValueType
