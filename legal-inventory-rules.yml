@@ -1,0 +1,75 @@
+schema_version: 1
+
+topics:
+  personal-data:
+    fields:
+      - title
+      - text
+    terms:
+      - personal data
+      - personally identifiable
+      - GDPR
+      - data subject
+      - controller
+      - processor
+      - privacy
+      - pseudonym
+      - anonym
+
+  research-ethics:
+    fields:
+      - title
+      - text
+    terms:
+      - ethical
+      - ethics
+      - human subject
+      - informed consent
+      - consent
+      - animal
+
+  rights-and-licensing:
+    fields:
+      - title
+      - text
+    terms:
+      - copyright
+      - intellectual property
+      - rightsholder
+      - ownership
+      - patent
+      - license
+
+  legal-sharing:
+    fields:
+      - title
+      - text
+    terms:
+      - legal
+      - legislation
+      - law
+      - regulation
+      - contract
+      - transfer data
+      - outside the EU
+      - outside the EEA
+
+  biobank-and-samples:
+    fields:
+      - title
+      - text
+    terms:
+      - biobank
+      - biological specimen
+      - physical sample
+
+  sensitive-data:
+    fields:
+      - title
+      - text
+    terms:
+      - sensitive information
+      - sensitive data
+      - health data
+      - genetic data
+      - special category

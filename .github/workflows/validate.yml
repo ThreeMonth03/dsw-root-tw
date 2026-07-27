@@ -12,7 +12,7 @@ permissions:
 
 env:
   TOOLING_REPOSITORY: ThreeMonth03/dsw-km-translation-tool
-  TOOLING_REF: 8c78a54cc5fc4105d4c1b9ef8c655dba0d263d3e
+  TOOLING_REF: 7c9b7aedace898284c10f02582eb64b43a25c65a
 
 jobs:
   validate:
@@ -36,6 +36,21 @@ jobs:
       - name: Install validator
         working-directory: tooling-repo
         run: make install-dev BOOTSTRAP_PYTHON=python
+
+      - name: Validate Taiwan legal mapping
+        run: >-
+          tooling-repo/.venv/bin/dsw-km-validate-legal-mapping
+          --mapping km-repo/legal-mapping.yml
+          --km tooling-repo/tests/fixtures/source_inputs/dsw_root_2.7.0.km
+
+      - name: Verify generated legal inventory
+        run: |
+          inventory="$RUNNER_TEMP/legal-question-inventory.yml"
+          tooling-repo/.venv/bin/dsw-km-build-legal-inventory \
+            --km tooling-repo/tests/fixtures/source_inputs/dsw_root_2.7.0.km \
+            --rules km-repo/legal-inventory-rules.yml \
+            --out "$inventory"
+          diff --unified km-repo/legal-question-inventory.yml "$inventory"
 
       - name: Validate current repository state
         env:
