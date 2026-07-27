@@ -1,0 +1,16 @@
+schema_version: 1
+
+knowledge_model:
+  organization_id: tw
+  km_id: root-tw
+  name: Taiwan DSW Knowledge Model
+  initial_parent_package_id: dsw:root:2.7.0
+  bundle_path: km/root-tw.km
+
+release:
+  manifest_path: release-manifest.yml
+  tag_prefix: v
+
+tooling:
+  repository: ThreeMonth03/dsw-km-translation-tool
+  ref: 082747bf3e656693c00e91c041d0e72081e23d3d

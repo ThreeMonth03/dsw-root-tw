@@ -1,0 +1,44 @@
+name: Validate KM Repository
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  TOOLING_REPOSITORY: ThreeMonth03/dsw-km-translation-tool
+  TOOLING_REF: 082747bf3e656693c00e91c041d0e72081e23d3d
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: km-repo
+          fetch-depth: 0
+
+      - uses: actions/checkout@v5
+        with:
+          repository: ${{ env.TOOLING_REPOSITORY }}
+          ref: ${{ env.TOOLING_REF }}
+          path: tooling-repo
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install validator
+        working-directory: tooling-repo
+        run: make install-dev BOOTSTRAP_PYTHON=python
+
+      - name: Validate current repository state
+        run: >-
+          tooling-repo/.venv/bin/dsw-km-validate-release
+          --repo-root km-repo
+          --allow-unreleased
