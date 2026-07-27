@@ -12,7 +12,7 @@ permissions:
 
 env:
   TOOLING_REPOSITORY: ThreeMonth03/dsw-km-translation-tool
-  TOOLING_REF: 082747bf3e656693c00e91c041d0e72081e23d3d
+  TOOLING_REF: 8c78a54cc5fc4105d4c1b9ef8c655dba0d263d3e
 
 jobs:
   validate:
@@ -38,7 +38,10 @@ jobs:
         run: make install-dev BOOTSTRAP_PYTHON=python
 
       - name: Validate current repository state
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: >-
           tooling-repo/.venv/bin/dsw-km-validate-release
           --repo-root km-repo
+          --github-repository "$GITHUB_REPOSITORY"
           --allow-unreleased
