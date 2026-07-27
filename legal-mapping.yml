@@ -317,7 +317,8 @@ mappings:
     authorities:
       - source_id: pdpa-current
         provisions:
-          - Article 21
+          - Articles 15-16
+          - Articles 20-21
       - source_id: human-subjects-research-act
         provisions:
           - Article 19
@@ -328,10 +329,12 @@ mappings:
       title_en: Will personal data, human-research materials, or biobank data be transferred across borders?
       guidance_en: >-
         Identify the material, sender, recipient, country, purpose, safeguards,
-        contracts, and responsible organization. Check restrictions issued under
-        Personal Data Protection Act Article 21. If human-research material or a
-        human biobank is involved, apply the additional consent, review, approval,
-        and export rules rather than relying on the general answer alone.
+        contracts, and responsible organization. For a public agency, record the
+        statutory and use basis under Articles 15 and 16. For a non-government
+        agency, also check restrictions issued under Article 21. If
+        human-research material or a human biobank is involved, apply the
+        additional consent, review, approval, and export rules rather than
+        relying on the general answer alone.
 
   - source_uuid: 50864250-7dad-421a-9f6c-303114fe6e6c
     source_title: Does the data set include personal data?
@@ -565,7 +568,7 @@ mappings:
     authorities:
       - source_id: pdpa-amendment-comparison
         provisions:
-          - Currently effective Article 27
+          - Currently effective Articles 18 and 27
       - source_id: pdpa-2025-amendment
       - source_id: human-biobank-management-act
         provisions:
@@ -576,9 +579,10 @@ mappings:
       guidance_en: >-
         Document access control, least privilege, separation of identifiers,
         encryption, logging, backup, incident handling, deletion, supplier
-        controls, and re-identification risk. Apply sector rules where relevant.
-        Recheck the effective date and implementing rules of the 2025 Personal
-        Data Protection Act amendment before release.
+        controls, and re-identification risk. Distinguish the duties of
+        government agencies from those of non-government agencies and apply
+        sector rules where relevant. Recheck the effective date and implementing
+        rules of the 2025 Personal Data Protection Act amendment before release.
 
   - source_uuid: cb7d17a8-30c0-489d-a43c-702b27d97611
     source_title: How are the rights of the collected data arranged?
