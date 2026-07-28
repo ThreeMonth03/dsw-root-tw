@@ -1,6 +1,6 @@
 schema_version: 1
 package_id: tw:root-tw:0.1.0
 version: 0.1.0
-previous_package_id: null
+previous_package_id: dsw:root:2.7.0
 forked_from: dsw:root:2.7.0
-bundle_sha256: ce61b1fcaa52b7ff38368aaec9c803bf3438b6cb48c59c7847e9b2d7c806a3f3
+bundle_sha256: 1e7bbca5ec481d99da63b8d031c29aa8d932b84b16dfd56d2a9c72887c2a854d

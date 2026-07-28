@@ -10,7 +10,7 @@ permissions:
 
 env:
   TOOLING_REPOSITORY: ThreeMonth03/dsw-km-translation-tool
-  TOOLING_REF: 3419c497d10560d2d0a11f1d35f257a51e1987b1
+  TOOLING_REF: d4621efdb3c771cea7fe9bc6979497d878d3db49
 
 jobs:
   release:
@@ -73,17 +73,33 @@ jobs:
         working-directory: km-repo
         run: |
           version="${GITHUB_REF_NAME#v}"
-          asset="$RUNNER_TEMP/root-tw-${version}.km"
-          cp "km/root-tw.km" "$asset"
-          sha256sum "$asset" > "${asset}.sha256"
+          assets="$RUNNER_TEMP/release-assets"
+          mkdir -p "$assets"
+          cp "km/root-tw.km" "$assets/tw-root-tw-${version}.km"
+          cp "km/root-tw.km" "$assets/tw-root-tw.km"
+          cp "release-manifest.yml" "$assets/release-manifest.yml"
+          (
+            cd "$assets"
+            sha256sum "tw-root-tw-${version}.km" > "tw-root-tw-${version}.km.sha256"
+            sha256sum "tw-root-tw.km" > "tw-root-tw.km.sha256"
+          )
 
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: >-
-          gh release create "$GITHUB_REF_NAME"
-          "$RUNNER_TEMP/root-tw-${GITHUB_REF_NAME#v}.km"
-          "$RUNNER_TEMP/root-tw-${GITHUB_REF_NAME#v}.km.sha256"
-          --repo "$GITHUB_REPOSITORY"
-          --verify-tag
-          --generate-notes
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          prerelease=()
+          if [[ "$version" == 0.* ]]; then
+            prerelease+=(--prerelease)
+          fi
+          gh release create "$GITHUB_REF_NAME" \
+            "$RUNNER_TEMP/release-assets/tw-root-tw-${version}.km" \
+            "$RUNNER_TEMP/release-assets/tw-root-tw-${version}.km.sha256" \
+            "$RUNNER_TEMP/release-assets/tw-root-tw.km" \
+            "$RUNNER_TEMP/release-assets/tw-root-tw.km.sha256" \
+            "$RUNNER_TEMP/release-assets/release-manifest.yml" \
+            --repo "$GITHUB_REPOSITORY" \
+            --verify-tag \
+            --generate-notes \
+            "${prerelease[@]}"

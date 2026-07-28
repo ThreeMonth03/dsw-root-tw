@@ -35,6 +35,13 @@ from this exact bundle and can be amended at the same time.
 10. Update the zh-Hant repository to the immutable source release and translate
     only that approved version.
 
+Every pull-request build uploads a 14-day review artifact named
+`tw-root-tw-<commit SHA>`. A tag creates a durable GitHub Release containing
+both the immutable `tw-root-tw-<version>.km` asset and the convenient
+`tw-root-tw.km` alias, their checksums, and `release-manifest.yml`. Releases
+below `1.0.0` are marked as pre-releases. Use GitHub Releases, not workflow
+artifacts, as the long-term version archive.
+
 Never move a published tag or replace an existing DSW version. Corrections get
 a new patch version. Pull-request and tag CI download the previous GitHub
 Release asset and reject rewritten historical packages.
